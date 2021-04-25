@@ -6,13 +6,19 @@ import colors from '../misc/colors';
 const SearchBar = ({containerStyle, value, onClear, onChangeText}) => {
   return (
     <View style={[styles.container, {...containerStyle}]}>
-        <TextInput value={value} onChangeText={onChangeText} style={styles.SearchBar} placeholder={'Pesquisar notas...'} />
+        <TextInput 
+            value={value} 
+            onChangeText={onChangeText} 
+            style={styles.SearchBar} 
+            placeholder={'Pesquisar notas...'}
+            placeholderTextColor={'#D3D3D3'}
+        />
         {value ? (<AntDesign 
-        name="close" 
-        size={20} 
-        color={colors.PRIMARY} 
-        onPress={onClear} 
-        style={styles.clearIcon}
+            name="close" 
+            size={20} 
+            color={colors.TEXT} 
+            onPress={onClear} 
+            style={styles.clearIcon}
         />) : null}
     </View>
     );
@@ -20,15 +26,16 @@ const SearchBar = ({containerStyle, value, onClear, onChangeText}) => {
 
 const styles = StyleSheet.create({
     container: {
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     SearchBar: {
         borderWidth: 0.5,
-        borderColor: colors.PRIMARY,
+        borderColor: colors.BG_NOTE,
         height: 40,
         borderRadius: 40,
         paddingLeft: 15,
         fontSize: 20,
+        color: colors.TEXT
     },
     clearIcon: {
        position: 'absolute' ,

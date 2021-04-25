@@ -113,7 +113,8 @@ const styles = StyleSheet.create({
     },
     desc: {
         fontSize: 20,
-        opacity: 0.6
+        opacity: 0.6,
+        color: colors.DARK
     },
     time: {
         textAlign: 'right',
