@@ -1,7 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-// import { Container } from './styles';
 import { AntDesign } from '@expo/vector-icons';
 import colors from '../misc/colors';
 

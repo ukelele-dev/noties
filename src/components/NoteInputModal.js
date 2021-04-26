@@ -92,12 +92,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 15,
   }
-
-  //   btnContainer: {
-  //     position: 'absolute',
-  //     right: 15,
-  //     bottom: 50,
-  // }
 })
 
 export default NoteInputModal;

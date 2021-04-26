@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text, Dimensions, TouchableOpacity, ImageBackground } from 'react-native';
-import RootTagContext from 'react-native/Libraries/ReactNative/RootTagContext';
+import { View, StyleSheet, Text, Dimensions, TouchableOpacity} from 'react-native';
 import {AntDesign} from '@expo/vector-icons';
 
 import colors from '../misc/colors';
@@ -36,7 +35,6 @@ const styles = StyleSheet.create({
         backgroundColor: colors.BG_NOTE,
         width: width / 2 - 10,
         padding: 8,
-        //borderRadius: 10,
         elevation: 5,
     },
     title: {
@@ -45,7 +43,6 @@ const styles = StyleSheet.create({
         color: colors.LIGHT,
     },
     pin: {
-        //backgroundColor: 'transparent',
         textAlign: 'center',
         top: -20,
     },
