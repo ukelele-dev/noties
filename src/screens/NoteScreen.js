@@ -9,7 +9,7 @@ import NoteInputModal from '../components/NoteInputModal';
 import Note from '../components/Note';
 import {useNotes} from '../contexts/NoteProvider';
 import NotFound from '../components/NotFound';
-import bg_img from '../assets/cortiça.jpg'
+import bg_img from '../assets/steel.jpg'
 
 const reverseData = data => {
     return data.sort((a, b) => {
@@ -100,7 +100,7 @@ const NoteScreen = ({user, navigation}) => {
                 numColumns={2} 
                 columnWrapperStyle={{justifyContent: 'space-between', marginBottom: 15}}
                 keyExtractor={item => item.id.toString()} 
-                renderItem={({item}) => <Note onPress={() => openNote(item)} item={item} 
+                renderItem={({item}) => <Note onPress={() => openNote(item)} item={item} color={() => {}}
                 />} />
                 </ImageBackground>
                 }

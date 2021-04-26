@@ -17,12 +17,12 @@ const Note = ({item, onPress}) => {
             style={[styles.container, {transform: [
                 { rotateZ: "-5deg" }]}]}
             >
-                <AntDesign name="pushpin" style={styles.pin} size={25} color={'red'} />
+                <AntDesign name="star" style={styles.pin} size={25} color={'black'} />
                 <Text numberOfLines={2} style={styles.title}>{title}</Text>
                 <Text numberOfLines={3}>{desc}</Text>
             </TouchableOpacity>
         </View>
-    </>
+    </> 
     );
 }
 
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.BG_NOTE,
         width: width / 2 - 10,
         padding: 8,
-        borderRadius: 10,
+        //borderRadius: 10,
         elevation: 5,
     },
     title: {
