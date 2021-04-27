@@ -79,6 +79,12 @@ const NoteScreen = ({user, navigation}) => {
         await findNotes()
     }
 
+    function randomColor() {
+        return '#' + parseInt((Math.random() * 0xFFFFFF))
+        .toString(16)
+        .padStart(6, '0')
+    }
+  
 
   return (
     <>
@@ -94,16 +100,22 @@ const NoteScreen = ({user, navigation}) => {
                 /> : null}
 
                 {resultNotFound ? <NotFound/> : 
-                <ImageBackground source={bg_img} style={{width: '100%', height: '100%'}} >
+                <View style={{flex: 1}}>
+                 <ImageBackground source={bg_img} style={{width: '100%', height: '100%'}} >
+                    
                 <FlatList
-                data={reverseNotes} 
-                numColumns={2} 
-                columnWrapperStyle={{justifyContent: 'space-between', marginBottom: 15}}
-                keyExtractor={item => item.id.toString()} 
-                renderItem={({item}) => <Note onPress={() => openNote(item)} item={item} color={() => {}}
-                />} />
-                </ImageBackground>
+                    data={reverseNotes} 
+                    numColumns={2} 
+                    columnWrapperStyle={{justifyContent: 'space-between', marginBottom: 15 }}
+                    keyExtractor={item => item.id.toString()} 
+                    renderItem={({item}) => 
+                    <Note onPress={() => openNote(item)} item={item} bgcolor={randomColor()} />} 
+                />
+
+                 </ImageBackground>
+                </View>
                 }
+               
                 
                 {!notes.length ? (
                     <View style={[StyleSheet.absoluteFillObject, styles.emptyHeaderContainer]}>

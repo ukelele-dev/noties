@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Text, ScrollView, Alert, ImageBackground } from 'react-native';
+import { View, StyleSheet, Text, ScrollView, Alert } from 'react-native';
 import {useHeaderHeight} from '@react-navigation/stack';
 
 import colors from '../misc/colors';
@@ -79,7 +79,7 @@ const NoteDetail = props => {
         setIsEdit(true)
         setShowModal(true)
     }
-  
+
     return (
       <>
       <ScrollView contentContainerStyle={[styles.container, {paddingTop: headerHeight}]}>

@@ -5,7 +5,7 @@ import {AntDesign} from '@expo/vector-icons';
 import colors from '../misc/colors';
 
 
-const Note = ({item, onPress}) => {
+const Note = ({item, onPress, bgcolor}) => {
     const {title, desc} = item;
 
   return (
@@ -13,7 +13,7 @@ const Note = ({item, onPress}) => {
         <View style={{flex: 1, justifyContent: 'center'}}>
             <TouchableOpacity 
             onPress={onPress} 
-            style={[styles.container, {transform: [
+            style={[styles.container, {backgroundColor: bgcolor, transform: [
                 { rotateZ: "-5deg" }]}]}
             >
                 <AntDesign name="star" style={styles.pin} size={25} color={'black'} />
@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
         marginVertical: 10,
         marginHorizontal: 10,
-        backgroundColor: colors.BG_NOTE,
         width: width / 2 - 10,
         padding: 8,
         elevation: 5,
@@ -41,6 +40,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 16,
         color: colors.LIGHT,
+        borderBottomWidth: 0.5,
+        marginBottom: 5
     },
     pin: {
         textAlign: 'center',
