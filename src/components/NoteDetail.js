@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Text, ScrollView, Alert } from 'react-native';
+import { View, StyleSheet, Text, ScrollView, Alert, ImageBackground } from 'react-native';
 import {useHeaderHeight} from '@react-navigation/stack';
+
 import colors from '../misc/colors';
 import RoundIconBtn from './RoundIconBtn';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNotes } from '../contexts/NoteProvider';
 import NoteInputModal from './NoteInputModal';
+import pauta from '../assets/line.png'
 
 const formatDate = ms => {
     const date = new Date(ms)
@@ -104,16 +106,19 @@ const NoteDetail = props => {
 const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 15,
+        
     },
     title: {
-        fontSize: 30,
-        color: colors.PRIMARY,
-        fontWeight: 'bold'
+        fontSize: 25,
+        color: colors.DARK,
+        fontWeight: 'bold',
     },
     desc: {
         fontSize: 20,
         opacity: 0.6,
-        color: colors.DARK
+        color: colors.DARK,
+        borderWidth: 0.5,
+        padding: 5,
     },
     time: {
         textAlign: 'right',

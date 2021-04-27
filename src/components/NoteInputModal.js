@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, Modal, Text, StatusBar, TextInput, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { View, StyleSheet, Modal, StatusBar, TextInput, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import colors from '../misc/colors';
 import RoundIconBtn from './RoundIconBtn';
 
@@ -50,14 +50,13 @@ const NoteInputModal = ({visible, onClose, onSubmit, note, isEdit}) => {
       <View style={styles.container}>
         <TextInput value={title} onChangeText={(text) => handleOnChangeText(text, 'title')} placeholder={'Título'} style={[styles.input, styles.title]} />
         <TextInput value={desc} onChangeText={(text) => handleOnChangeText(text, 'desc')} multiline={true} placeholder={'Nota'} style={[styles.input, styles.desc]} />
-      </View>
-      <View style={styles.btnContainer}>
-          <RoundIconBtn size={24} antIconName='check' onPress={handleSubmit}/>
-          {title.trim() || desc.trim() ?  (<RoundIconBtn size={24} style={{marginLeft: 15}} antIconName='close' onPress={closeModal} />) : null}
+        <View style={styles.btnContainer}>
+            <RoundIconBtn size={24} antIconName='check' onPress={handleSubmit}/>
+            {title.trim() || desc.trim() ?  (<RoundIconBtn size={24} style={{marginLeft: 15}} antIconName='close' onPress={closeModal} />) : null}
+        </View>
       </View>
       <TouchableWithoutFeedback onPress={handleModalClose}>
-        <View style={[styles.modalBG, StyleSheet.absoluteFillObject]}>
-        </View>
+        <View style={[styles.modalBG, StyleSheet.absoluteFillObject]} />
       </TouchableWithoutFeedback>
     </Modal>
     </>
@@ -72,7 +71,7 @@ const styles = StyleSheet.create({
   input: {
     borderBottomWidth: 2,
     borderBottomColor: colors.BG_NOTE,
-    fontSize: 30,
+    fontSize: 20,
     color: colors.DARK,
   },
   title: {
@@ -82,6 +81,7 @@ const styles = StyleSheet.create({
   },
   desc: {
     height: 100,
+
   },
   modalBG: {
     flex: 1,
